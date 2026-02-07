@@ -1,0 +1,161 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Background */
+body {
+    min-height: 100vh;
+    background: linear-gradient(120deg, #eef2ff, #f8fafc);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: "Inter", system-ui, sans-serif;
+}
+
+/* Header */
+header {
+    margin-bottom: 24px;
+}
+
+h1 {
+    font-size: 2rem;
+    font-weight: 600;
+    color: #0f172a;
+    letter-spacing: 0.5px;
+}
+
+/* MAIN BOX */
+section {
+    width: 92%;
+    max-width: 520px;
+    padding: 2rem;
+    border-radius: 16px;
+
+    background: #ffffff;
+    border-left: 6px solid #6366f1;
+    box-shadow: 0 18px 40px rgba(15, 23, 42, 0.12);
+
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+/* ROWS (ORDER SAFE) */
+.row2:first-child {
+    display: flex;
+    gap: 1rem;
+    width: 100%;
+    align-items: center;
+}
+
+.row2:first-child .num_disp {
+    flex: 1;
+    min-width: 0; /* ⭐ THIS IS THE KEY FIX */
+}
+
+.row3 {
+    display: flex;
+    gap: 1rem;
+    width: 100%;
+}
+
+/* INPUTS */
+.num_disp {
+    flex: 1;
+    padding: 0.8rem;
+    font-size: 1.1rem;
+    text-align: center;
+
+    border-radius: 8px;
+    border: 2px solid #c7d2fe;
+    background: #f8fafc;
+    color: #020617;
+
+    transition: 0.2s ease;
+}
+
+.num_disp:focus {
+    outline: none;
+    border-color: #6366f1;
+    background: #ffffff;
+}
+
+/* OPERATOR */
+#symbol {
+    max-width: 60px;
+    font-size: 2rem;
+    font-weight: 700;
+    color: #6366f1;
+    background: #eef2ff;
+}
+
+/* BUTTONS */
+.btn {
+    flex: 1;
+    padding: 0.8rem;
+    font-size: 1rem;
+
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+
+    background: #eef2ff;
+    color: #3730a3;
+    font-weight: 600;
+
+    transition: 0.2s ease;
+}
+
+.btn:hover {
+    background: #6366f1;
+    color: #ffffff;
+}
+
+/* RESULT BUTTON */
+#btn_res {
+    background: #22c55e;
+    color: white;
+    font-weight: 700;
+}
+
+#btn_res:hover {
+    background: #16a34a;
+}
+
+/* RESULT DISPLAY */
+#result {
+    background: #ecfeff;
+    border-color: #22d3ee;
+    font-weight: 700;
+    font-size: 1.4rem;
+    color: #0f172a;
+}
+
+/* MOBILE SAFE */
+@media (max-width: 600px) {
+
+    h1 {
+        font-size: 1.6rem;
+        text-align: center;
+    }
+
+    section {
+        padding: 1.5rem;
+    }
+
+    .row2 {
+        flex-wrap: wrap;
+    }
+
+    .row3 {
+        flex-direction: column;
+    }
+
+    #symbol {
+        max-width: 50px;
+        font-size: 1.6rem;
+    }
+}
